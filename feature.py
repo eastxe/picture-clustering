@@ -68,6 +68,8 @@ class Feature():
         name = filename[:filename.rfind('.')]
         h = int(height / 4)
         w = int(width / 3)
+        if os.path.isdir('./temp/'):
+            os.mkdir('./temp')
         for i, j in itertools.product(xrange(3), xrange(4)):
             new_name = name + '_pos%d.png' % (i * 4 + j)
             cv2.imwrite('./temp/' + new_name,
