@@ -14,3 +14,7 @@ def result(filenames, labels):
         name = txtname[0:txtname.rfind('.')] + '.jpg'
         shutil.copyfile('./data/' + name,
                 './result/' + str(label) + '/' + name)
+
+
+if __name__ == '__main__':
+    pass
