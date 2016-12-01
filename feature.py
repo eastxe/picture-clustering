@@ -13,15 +13,15 @@ import cv2
 class Feature():
 
     def __init__(self, flag_separate=False):
-        MEAN = '../model/shinpukan_mean.npy'
-        MODEL = '../model/deploy.prototxt'
-        PRETRAINED = '../model/snapshot_iter_10000.caffemodel'
+        MEAN = '../path/to/mean_file'
+        NET = '../path/to/network_file'
+        MODEL = '../path/to/model_file'
         self.LAYER = 'fc6wi'
         self.INDEX = 4
         self.feature = []
         self.flag_separate = flag_separate
 
-        self.net = caffe.Classifier(MODEL, PRETRAINED)
+        self.net = caffe.Classifier(NET, MODEL)
         caffe.set_mode_cpu()
         self.net.transformer.set_mean('data', np.load(MEAN))
         self.net.transformer.set_raw_scale('data', 255)
@@ -61,14 +61,13 @@ class Feature():
 
     @staticmethod
     def separate(filename):
-        '''tempにseparateした画像を作る...'''
         new_filenames = []
         img = cv2.imread('./data/' + filename)
         height, width = img.shape[:2]
         name = filename[:filename.rfind('.')]
         h = int(height / 4)
         w = int(width / 3)
-        if os.path.isdir('./temp/'):
+        if not os.path.isdir('./temp/'):
             os.mkdir('./temp')
         for i, j in itertools.product(xrange(3), xrange(4)):
             new_name = name + '_pos%d.png' % (i * 4 + j)
@@ -80,5 +79,5 @@ class Feature():
 
 
 if __name__ == '__main__':
-    I = Feature(flag_separate=True)
+    I = Feature(flag_separate=False)
     I.get_featurevextor()
