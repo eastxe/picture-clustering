@@ -12,7 +12,7 @@ unsupervised clustering example: SpectralClustering, k-medoids, etc ...
 
 you need meanfile, modelfile, and networkfile.
 
-I recommend to use Caffe model. 
+I recommend to use Imagenet model in Caffe. 
 - meanfile: ilsvrc_2012_mean.npy
 - modelfile: caffe_reference_imagenet_model
 - networkfile: imagenet_deploy.prototxt.
