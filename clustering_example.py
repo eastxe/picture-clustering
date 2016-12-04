@@ -37,6 +37,6 @@ def input_data():
 if __name__ == '__main__':
     filenames, data = input_data()
     # n_clusters is a number of clusters
-    SC = SpectralClustering(n_clusters=5, eigen_solver='arpack', affinity='rbf')
+    SC = SpectralClustering(n_clusters=5, eigen_solver='arpack', affinity='cosine')
     labels = SC.fit_predict(data)
     result(filenames, labels)
