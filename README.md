@@ -33,9 +33,9 @@ chmod u+x get_caffe_reference_imagenet_model.sh
 wget https://raw.githubusercontent.com/aybassiouny/wincaffe-cmake/master/examples/imagenet/imagenet_deploy.prototxt
 ```
 - ilsvrc_2012_mean
-```
-cp ~/caffe/python/caffe/imagenet/ilsvrc_2012_mean.npy ./
-```
+
+	ilsvrc_2012_mean.npy is in
+		caffe/python/caffe/imagenet/ilsvrc_2012_mean.npy
 
 
 ### rewrite imagenet_deploy.prototxt
