@@ -15,9 +15,9 @@ def result(filenames, labels):
         if not os.path.exists('./result/' + str(i)):
             os.makedirs('./result/' + str(i))
     for label, txtname in zip(labels, filenames):
-        name = txtname[0:txtname.rfind('.')] + '.jpg'
-        shutil.copyfile('./data/' + name,
-                './result/' + str(label) + '/' + name)
+        # name = txtname[0:txtname.rfind('.')] + '.jpg'
+        shutil.copyfile('./data/' + txtname,
+                './result/' + str(label) + '/' + txtname)
 
 
 def input_data():
