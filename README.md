@@ -34,7 +34,7 @@ wget https://raw.githubusercontent.com/aybassiouny/wincaffe-cmake/master/example
 ```
 - ilsvrc_2012_mean
 ```
-cp caffe/python/caffe/imagenet/ilsvrc_2012_mean.npy ./
+cp ~/caffe/python/caffe/imagenet/ilsvrc_2012_mean.npy ./
 ```
 
 
