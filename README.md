@@ -19,7 +19,7 @@ I recommend to use Imagenet model in Caffe.
 
 Please, rewrite there path(line 16 ~ 18).
 
-### How to get there lfiles.
+### How to get there files.
 
 - caffe_reference_imagenet_model
 ```
